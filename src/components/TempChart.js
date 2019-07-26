@@ -6,6 +6,7 @@ class TempChart extends Component {
   static propTypes = {
     forecast: PropTypes.arrayOf(PropTypes.object).isRequired
   }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -26,8 +27,8 @@ class TempChart extends Component {
               text: "Temperature"
             },
             labels: {
-              formatter: function(value) {
-                return value.toFixed(1) + " C°";
+              formatter(value) {
+                return `${value.toFixed(1)  } C°`;
               }
             }
           },
@@ -37,8 +38,8 @@ class TempChart extends Component {
               text: "Rain"
             },
             labels: {
-              formatter: function(value) {
-                return value.toFixed(1) + " mm";
+              formatter(value) {
+                return `${value.toFixed(1)  } mm`;
               }
             }
           }
@@ -92,17 +93,17 @@ class TempChart extends Component {
     if (!forecast) {
       return <div>Loading...</div>;
     }
-    let forecastTemp = [];
-    let forecastRain = [];
+    const forecastTemp = [];
+    const forecastRain = [];
     function checker(x) {
       if (x.rain && x.rain["3h"] !== undefined) {
         return x.rain["3h"];
-      } else {
+      } 
         return 0;
-      }
+      
     }
 
-    forecast.forEach(function(object) {
+    forecast.forEach((object) => {
       forecastTemp.push([object.dt * 1000, object.main.temp]);
       forecastRain.push([object.dt * 1000, checker(object)]);
     });

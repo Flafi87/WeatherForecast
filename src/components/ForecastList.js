@@ -21,14 +21,15 @@ if (
     forecast !== null &&
     typeof forecast !== typeof undefined
   ) {
-    let days = [];
-    let modData = [];
-    let myData = { 0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [] };
-    forecast.forEach(function(object) {
-      let myDate = new Date(object.dt * 1000).getDay();
-      object["day"] = myDate;
-      modData.push(object);
-      myData[myDate].push(object);
+    const days = [];
+    const modData = [];
+    const myData = { 0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [] };
+    forecast.forEach((object) => {
+      const temp = object;
+      const myDate = new Date(temp.dt * 1000).getDay();
+      temp.day = myDate;
+      modData.push(temp);
+      myData[myDate].push(temp);
       if (!days.includes(myDate)) {
         days.push(myDate);
       }
@@ -45,7 +46,7 @@ if (
       );
     });
 
-    //Giving the name of the day. 0 is sunday 1 monday ...
+    // Giving the name of the day. 0 is sunday 1 monday ...
 
     return (
       <div>

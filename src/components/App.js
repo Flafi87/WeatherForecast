@@ -49,7 +49,7 @@ class App extends Component {
             });
           }
         );
-        //forecast
+        // forecast
         Axios(
           `https://flafi.me:2053/api/city/forecastcoord/${lon}/${lat}`
         ).then(
@@ -77,7 +77,7 @@ class App extends Component {
     Axios(`https://flafi.me:2053/api/city/weather-${id}`).then(
       weather => {
         this.setState({ weather: weather.data[0] });
-        let name = weather.data[0].name;
+        const {name} = weather.data[0];
         this.setState({ cityName: name });
       },
       error => {
@@ -107,7 +107,7 @@ const spinner =         (
 )
     if (error) {
       return <div>Error</div>;
-    } else {
+    } 
       return (
         <div className="container">
           <div className="d-flex justify-content-between">
@@ -121,7 +121,7 @@ const spinner =         (
             <Button
               className="my-3"
               color="primary"
-              href="https://github.com/Flafi87/weatherReact"
+              href="https://github.com/Flafi87/weatherforecast"
             >
       Repo
             </Button>
@@ -167,7 +167,7 @@ const spinner =         (
           </div>
         </div>
       );
-    }
+    
   }
 }
 
