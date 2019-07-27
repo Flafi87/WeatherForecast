@@ -55,7 +55,7 @@ class App extends Component {
         ).then(
           forecast => {
             this.setState({
-              forecast: forecast.data,
+              forecast: forecast.data.list,
               isLoaded: true
             });
           },
