@@ -34,60 +34,60 @@ import {Badge} from 'reactstrap';
         <div className="d-flex justify-content-center flex-wrap">
           <Badge className="m-3" id="temperature" color="info">
             <div className="m-1">
-              <h4>Temperature</h4>
-              <h3>
+              <h5>Temperature</h5>
+              <h5>
                 {temp}
                 {' '}
 C°
-              </h3>
+              </h5>
             </div>
 
           </Badge>
           <Badge className="m-3" id="humidity" color="info">
             <div className="m-1">
-              <h4>Humidity</h4>
-              <h3>              
+              <h5>Humidity</h5>
+              <h5>              
                 {' '}
                 {humidity}
 %
-              </h3>
+              </h5>
             </div>
 
           </Badge>
           <Badge className="m-3" id="visibility" color="info">
             <div className="m-1">
-              <h4>Visibility</h4>
-              <h3>
+              <h5>Visibility</h5>
+              <h5>
                 {visibility}
 m
-              </h3>
+              </h5>
             </div>
 
           </Badge>
           <Badge className="m-3" id="clouds" color="info">
             <div className="m-1">
-              <h4>Cloudiness</h4>
-              <h3>
+              <h5>Cloudiness</h5>
+              <h5>
                 {cloudiness}
 %
-              </h3>
+              </h5>
             </div>
 
           </Badge>
           <Badge className="m-3" id="sunrise" color="info">
             <div className="m-1">
-              <h4>Sunrise</h4>
-              <h3>
+              <h5>Sunrise</h5>
+              <h5>
                 {sunrisetime}
-              </h3>
+              </h5>
             </div>
           </Badge>
           <Badge className="m-3" id="sunset" color="info">
             <div className="m-1">
-              <h4>Sunset</h4>
-              <h3>
+              <h5>Sunset</h5>
+              <h5>
                 {sunsettime}
-              </h3>
+              </h5>
             </div>
           </Badge>
         </div>
