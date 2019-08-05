@@ -114,7 +114,7 @@ const spinner =         (
             <Button
               className="my-3"
               color="success"
-              href="https://flafi.me"
+              href="https://flafi.me/#jscript"
             >
       Back to the website
             </Button>
