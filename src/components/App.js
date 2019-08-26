@@ -35,7 +35,7 @@ class App extends Component {
       position => {
         lon = parseFloat(position.coords.longitude).toFixed(2);
         lat = parseFloat(position.coords.latitude).toFixed(2);
-        Axios(`https://flafi.me:2053/api/city/weathercoord/${lon}/${lat}`).then(
+        Axios(`https://flafi.hu:2053/api/city/weathercoord/${lon}/${lat}`).then(
           weather => {
             this.setState({
               weather: weather.data,
@@ -51,7 +51,7 @@ class App extends Component {
         );
         // forecast
         Axios(
-          `https://flafi.me:2053/api/city/forecastcoord/${lon}/${lat}`
+          `https://flafi.hu:2053/api/city/forecastcoord/${lon}/${lat}`
         ).then(
           forecast => {
             this.setState({
@@ -74,7 +74,7 @@ class App extends Component {
     this.setState({
       isLoaded: false
     });
-    Axios(`https://flafi.me:2053/api/city/weather-${id}`).then(
+    Axios(`https://flafi.hu:2053/api/city/weather-${id}`).then(
       weather => {
         this.setState({ weather: weather.data[0] });
         const {name} = weather.data[0];
@@ -84,7 +84,7 @@ class App extends Component {
         this.setState({ error });
       }
     );
-    Axios(`https://flafi.me:2053/api/city/forecast-${id}`).then(
+    Axios(`https://flafi.hu:2053/api/city/forecast-${id}`).then(
       forecast => {
         this.setState({ forecast: forecast.data[0].list, isLoaded: true });
       },
@@ -114,7 +114,7 @@ const spinner =         (
             <Button
               className="my-3"
               color="success"
-              href="https://flafi.me/#jscript"
+              href="https://flafi.hu/index.html#jscript"
             >
       Back to the website
             </Button>
@@ -122,6 +122,7 @@ const spinner =         (
               className="my-3"
               color="primary"
               href="https://github.com/Flafi87/weatherforecast"
+              target="_blank"
             >
       Repo
             </Button>
