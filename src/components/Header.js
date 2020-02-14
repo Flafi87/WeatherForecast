@@ -1,21 +1,11 @@
 import React from 'react';
 import {Badge} from 'reactstrap';
+import PropTypes from 'prop-types';
 
 
 
-  const Header =(props) =>{
-
-    const {weather} = props
-
-    if(typeof weather === typeof undefined || weather === null){
-      return (
-        <div className="ui active dimmer">
-          <div className="ui text loader">Loading</div>
-        </div>
-      )
-    }
+  const Header =({weather}) =>{
       const weatherdata = weather;
-      // console.log(weatherdata)
       const {temp} = weatherdata.main;
       const {humidity} = weatherdata.main;
       const {visibility} = weatherdata;
@@ -93,6 +83,15 @@ m
         </div>
       </div>
     )
+  }
+
+  Header.propTypes = {
+    weather: PropTypes.objectOf(PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+      PropTypes.number,
+      PropTypes.arrayOf(PropTypes.object)
+    ])).isRequired
   }
 
 export default Header;
